@@ -7,21 +7,14 @@ public class foundation {
 
 
     public static void main(String[] args) {
-
+        newFile();
         System.out.println(display());
     }
 
-    private static String display() {
-        return null;
-    }
-
-    public String display(ContactManager.User user) {
-        return "--------------------" +
-                "\n  name:  " + user.getContact() +
-                "\n  email: " + user.getEmail();
 
 
-        public void newFile() {
+
+        static void newFile() {
             String directory = "data";
             String filename = "contact.txt";
 
@@ -42,7 +35,16 @@ public class foundation {
             } catch (IOException ioe) {
                 ioe.printStackTrace();
             }
+        }
 
+    private static String display() {
+        return null;
+    }
+
+    public String display(ContactManager.User user) {
+        return "--------------------" +
+                "\n  name:  " + user.getContact() +
+                "\n  email: " + user.getEmail();
 
             //program to interfaces versus implementation
 //        public static void writeFile () {
@@ -66,7 +68,7 @@ public class foundation {
 //                ioe.printStackTrace();
 //            }
 //        }
-        }
+
     }
 
 
