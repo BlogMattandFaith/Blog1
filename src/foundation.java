@@ -4,15 +4,70 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class foundation {
 
+    private static List<String> contact;
+    private String  firstName;
+    private String lastName;
+    private int contacts;
+    private String email;
+
+
+    public List<String> getContact() {
+        return contact;
+    }
+
+    public void setContact() {
+        this.contact = new ArrayList<>();
+    }
+
+
+    public String getFirst() {
+        return firstName;
+    }
+
+    public void setFirst(String firstName) {
+         this.firstName = firstName;
+    }
+
+    public String getLast() {
+        return lastName;
+    }
+
+   public void setLast(String lastName) {
+        this.lastName = lastName;
+   }
+
+   public int getContacts() {
+        return contacts;
+   }
+
+   public void setContacts(int contacts) {
+        this.contacts = contacts;
+   }
+
+   public String getEmail() {
+        return email;
+   }
+
+   public void setEmail(String email) {
+        this.email = email;
+   }
+
 
     public static void main(String[] args) {
+        ViewContacts viewAll = new ViewContacts();
         newFile();
         writeFile();
+        viewAll.mainMenu();
 
-        }
+    }
+
+
+
+
         static void newFile(){
             String directory = "data";
             String filename = "contact.txt";
@@ -38,15 +93,15 @@ public class foundation {
 
         }
 
+
     //program to interfaces versus implementation
-    static void writeFile() {
-        List<String> contact = new ArrayList<>();
+    public static void writeFile() {
             contact.add("Jim");
             contact.add("Joe");
         for (String fr : contact)
             System.out.println(fr);
         try {
-            Path info = Paths.get("data", "info.txt");
+            Path info = Paths.get("data", "contact.txt");
             Files.write(info, contact);
         } catch (IOException ioe) {
             ioe.printStackTrace();
@@ -54,12 +109,14 @@ public class foundation {
 
         contact.add("John"); contact.add("Jack");
         try {
-            Path info = Paths.get("data", "info.txt");
+            Path info = Paths.get("data", "contact.txt");
             Files.write(info, contact);
         } catch (IOException ioe){
             ioe.printStackTrace();
         }
     }
+
+
 
 
 
