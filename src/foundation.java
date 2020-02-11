@@ -1,21 +1,36 @@
+import com.sun.tools.internal.xjc.reader.xmlschema.bindinfo.BIConversion;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class foundation {
-   public static ContactManager management = new ContactManager();
+
 
     public static void main(String[] args) {
-        newFile();
-        System.out.println(display());
-        writeFile();
+
+
+
     }
 
 
+//    private static String display() {
+////        return null;
+    }
+
+//        public static String display (ContactManager.User user){
+//            return "--------------------" +
+//                    "\n  name:  " + user.getContact() +
+//                    "\n  email: " + user.getEmail();
+//
+//        }
+        public void newFile(Iterable<? extends String> contact) {
+
+static void newFile() {
 
 
-        static void newFile() {
+
             String directory = "data";
             String filename = "contact.txt";
 
@@ -36,7 +51,31 @@ public class foundation {
             } catch (IOException ioe) {
                 ioe.printStackTrace();
             }
-        }
+
+
+
+
+            public static void writeFile() {
+                contact.forEach("Jim");
+                contact.("Joe");
+                for (String fr : contact)
+                    System.out.println(fr);
+                try {
+                    Path info = Paths.get("data", "contact.txt");
+                    Files.write(info, contact);
+                } catch (IOException ioe) {
+                    ioe.printStackTrace();
+                }
+
+                contact.add("John");
+                contact.add("Jack");
+                try {
+                    Path info = Paths.get("data", "contact.txt");
+                    Files.write(info, contact);
+                } catch (IOException ioe) {
+                    ioe.printStackTrace();
+                }
+            }
 
 
         public static String display() {
@@ -44,13 +83,10 @@ public class foundation {
                     "\n  name:  " + management.getContact() +
                     "\n  email: " + management.getEmail();
 
-        }
 
-            //program to interfaces versus implementation
-            public static void writeFile() {
 
-              management.getContact().add("Jim");
-               management.getContact().add("Joe");
+                management.getContact().add("Jim");
+                management.getContact().add("Joe");
                 for (String fr : management.getContact())
                     System.out.println(fr);
                 try {
@@ -69,11 +105,13 @@ public class foundation {
                     ioe.printStackTrace();
                 }
             }
-
-
-
-
 }
+
+
+
+
+
+
 
 
 
