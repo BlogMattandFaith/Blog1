@@ -11,6 +11,7 @@ public class ContactManager {
     private String lastName;
     private int contacts;
     private String email;
+    private int choice;
 
     public ContactManager(String contact, String firstName, String lastName, int contacts, String email) {
         this.contact = new ArrayList<>();
@@ -68,6 +69,45 @@ public class ContactManager {
             System.out.println(this.getFirst());
             System.out.println(this.getLast());
         }
+
+        public void addContact(){
+
+
+
+
+
+        }
+
+    public void menu() {
+        boolean quit = false;
+        int choice = 0;
+        while (!quit) {
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Enter your choice:");
+            choice = scanner.nextInt();
+            scanner.nextLine();
+            switch (choice) {
+                case 1:
+                    viewContacts();
+                    break;
+                case 2:
+                    addContact();
+                    break;
+                case 3:
+                    //Search contacts
+                    break;
+                case 4:
+                    //Delete a contact
+                    break;
+                case 5:
+                   //exit blog
+                    break;
+                default:
+                    break;
+            }
+        }
+
+    }
 
 }
 

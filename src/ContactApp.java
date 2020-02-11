@@ -29,10 +29,7 @@ public class ContactApp {
                 foundation.display();
             foundation.newFile();
             foundation.writeFile();
-        } while (!writeOption.equals("exit"));
+        } while (!writeOption.equals("5"));
     }
-
-
-
 
 }
