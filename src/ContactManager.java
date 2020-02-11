@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class ContactManager {
 
-
     Scanner in = new Scanner(System.in);
 
     private List<String> contact;
@@ -13,35 +12,24 @@ public class ContactManager {
     private int contacts;
     private String email;
 
-
+    public ContactManager(String contact, String firstName, String lastName, int contacts, String email) {
+        this.contact = new ArrayList<>();
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.contacts = contacts;
+        this.email = email;
+    }
 
 
     public List<String> getContact() {
         return contact;
     }
 
-    public void setContact() {
+    public void setContact(List<String> contact) {
         this.contact = new ArrayList<>();
     }
 
-
-
     public String getFirst() {
-        return firstName;
-    }
-
-
-    public List<String> getContact() {
-            return contact;
-        }
-
-        public void setContact() {
-            this.contact = new ArrayList<>();
-        }
-
-
-
-        public String getFirst() {
             return firstName;
         }
 
@@ -62,10 +50,6 @@ public class ContactManager {
         }
 
 
-    public ContactManager(String email) {
-        this.email = email;
-    }
-
         public void setContacts(int contacts) {
             this.contacts = contacts;
         }
@@ -84,7 +68,8 @@ public class ContactManager {
             System.out.println(this.getFirst());
             System.out.println(this.getLast());
         }
-    }
+
+}
 
 
 
