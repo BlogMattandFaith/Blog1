@@ -4,11 +4,12 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class foundation {
-
+   public static ContactManager management = new ContactManager();
 
     public static void main(String[] args) {
         newFile();
         System.out.println(display());
+        writeFile();
     }
 
 
@@ -37,39 +38,39 @@ public class foundation {
             }
         }
 
-    private static String display() {
-        return null;
-    }
 
-    public String display(ContactManager.User user) {
-        return "--------------------" +
-                "\n  name:  " + user.getContact() +
-                "\n  email: " + user.getEmail();
+        public static String display() {
+            return "--------------------" +
+                    "\n  name:  " + management.getContact() +
+                    "\n  email: " + management.getEmail();
+
+        }
 
             //program to interfaces versus implementation
-//        public static void writeFile () {
-//            contact.add("Jim");
-//            contact.add("Joe");
-//            for (String fr : contact)
-//                System.out.println(fr);
-//            try {
-//                Path info = Paths.get("data", "contact.txt");
-//                Files.write(info, contact);
-//            } catch (IOException ioe) {
-//                ioe.printStackTrace();
-//            }
-//
-//            contact.add("John");
-//            contact.add("Jack");
-//            try {
-//                Path info = Paths.get("data", "contact.txt");
-//                Files.write(info, contact);
-//            } catch (IOException ioe) {
-//                ioe.printStackTrace();
-//            }
-//        }
+            public static void writeFile() {
 
-    }
+              management.getContact().add("Jim");
+               management.getContact().add("Joe");
+                for (String fr : management.getContact())
+                    System.out.println(fr);
+                try {
+                    Path info = Paths.get("data", "contact.txt");
+                    Files.write(info, management.getContact());
+                } catch (IOException ioe) {
+                    ioe.printStackTrace();
+                }
+
+                management.getContact().add("John");
+                management.getContact().add("Jack");
+                try {
+                    Path info = Paths.get("data", "contact.txt");
+                    Files.write(info, management.getContact());
+                } catch (IOException ioe) {
+                    ioe.printStackTrace();
+                }
+            }
+
+
 
 
 }
