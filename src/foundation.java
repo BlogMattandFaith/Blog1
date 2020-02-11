@@ -6,9 +6,10 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class foundation {
-   public static ContactManager management = new ContactManager();
+
 
     public static void main(String[] args) {
+
 
 
     }
@@ -25,7 +26,10 @@ public class foundation {
 //
 //        }
         public void newFile(Iterable<? extends String> contact) {
+
 static void newFile() {
+
+
 
             String directory = "data";
             String filename = "contact.txt";
@@ -47,7 +51,6 @@ static void newFile() {
             } catch (IOException ioe) {
                 ioe.printStackTrace();
             }
-        }
 
 
 
@@ -74,16 +77,13 @@ static void newFile() {
                 }
             }
 
+
         public static String display() {
             return "--------------------" +
                     "\n  name:  " + management.getContact() +
                     "\n  email: " + management.getEmail();
 
 
-        }
-
-            //program to interfaces versus implementation
-            public static void writeFile() {
 
                 management.getContact().add("Jim");
                 management.getContact().add("Joe");
