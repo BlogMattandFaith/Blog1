@@ -8,19 +8,19 @@ public class foundation {
 
     public static void main(String[] args) {
 
-        System.out.println(display());
+        System.out.println(display("Faith"));
     }
 
-    private static String display() {
-        return null;
-    }
+//    private static String display() {
+////        return null;
+//    }
 
-    public String display(ContactManager.User user) {
+    public static String display(ContactManager.User user) {
         return "--------------------" +
                 "\n  name:  " + user.getContact() +
                 "\n  email: " + user.getEmail();
 
-
+    }
         public void newFile() {
             String directory = "data";
             String filename = "contact.txt";
@@ -70,7 +70,7 @@ public class foundation {
     }
 
 
-}
+
 
 
 

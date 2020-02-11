@@ -3,13 +3,13 @@ import java.util.List;
 import java.util.Scanner;
 
 public class ContactManager {
-
+Scanner in = new Scanner(System.in);
 
 
     public class User {
 
-        List<String> contact;
-        String firstName;
+        private List<String> contact;
+        private String firstName;
         private String lastName;
         private int contacts;
         private String email;
@@ -54,6 +54,15 @@ public class ContactManager {
 
         public void setEmail(String email) {
             this.email = email;
+        }
+
+        public User(){
+            System.out.println("Enter you first name: ");
+            this.firstName = in.nextLine();
+
+            System.out.println("Enter your last name");
+            this.lastName = in.nextLine();
+
         }
     }
 }
