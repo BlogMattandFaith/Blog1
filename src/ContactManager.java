@@ -71,24 +71,34 @@ public class ContactManager {
         }
 
         public void addContact(){
+        ContactManager management = new ContactManager("contact", "firstName", "lastName",
+                0, "email");
+        Scanner scanner = new Scanner(System.in);
+        String first;
+        String last;
+        System.out.println("What is the first name? ");
+        first = scanner.next();
+            foundation.writeFile(first);
+            System.out.println("what is the last name? ");
+            last = scanner.next();
+            foundation.writeFile(last);
 
 
+    }
 
-
-
-        }
 
     public void menu() {
+        foundation foun = new foundation();
         boolean quit = false;
         int choice = 0;
         while (!quit) {
             Scanner scanner = new Scanner(System.in);
-            System.out.println("Enter your choice:");
+            System.out.println("Enter an option (1, 2, 3, 4 or 5): ");
             choice = scanner.nextInt();
             scanner.nextLine();
             switch (choice) {
                 case 1:
-                    viewContacts();
+                    foundation.display();
                     break;
                 case 2:
                     addContact();

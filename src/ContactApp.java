@@ -23,12 +23,8 @@ public class ContactApp {
             System.out.println("3. Search a contact by name.");
             System.out.println("4. Delete an existing contact.");
             System.out.println("5. Exit.");
-            System.out.println("Enter an option (1, 2, 3, 4 or 5): ");
-            writeOption = in.nextLine();
-            if (writeOption.equals("0"))
-                foundation.display();
-            foundation.newFile();
-            foundation.writeFile();
+
+            management.menu();
         } while (!writeOption.equals("5"));
     }
 

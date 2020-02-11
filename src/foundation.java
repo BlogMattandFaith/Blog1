@@ -34,11 +34,12 @@ public static ContactManager management = new ContactManager("contact", "firstNa
             }
         }
 
-            public static void writeFile () {
+            public static void writeFile (String name) {
               management.getContact().add("Jim");
                 management.getContact().add("Joe");
                 management.getContact().add("John");
                 management.getContact().add("Jack");
+                management.getContact().add(name);
                 for (String fr : management.getContact())
                     System.out.println(fr);
                try {
