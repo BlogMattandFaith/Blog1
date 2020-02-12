@@ -1,5 +1,8 @@
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
+import java.io.PrintStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -60,15 +63,14 @@ public static ContactManager management = new ContactManager("contact", "firstNa
             }
 
 
-            public static void display ()  {
-//                System.out.println( "--------------------" +
-//                        "\n  name:  " + new String(Files.(Paths.get("contact.txt"))));
-                System.out.println(new String(Files.readAllBytes(Paths.get("contact.txt"))));
-
+            public static void display () throws FileNotFoundException {
+                FileReader fileOut = new FileReader("contact.txt");
+                System.out.println( "--------------------" +
+                        "\n  name:  " + fileOut);
 
             }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
         display();
     }
 
