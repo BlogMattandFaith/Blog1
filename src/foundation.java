@@ -1,5 +1,8 @@
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
+import java.io.PrintStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -34,21 +37,23 @@ public static ContactManager management = new ContactManager("contact", "firstNa
             }
         }
 
-            public static void writeFile (String name) {
-              management.getContact().add("Jim");
-                management.getContact().add("Joe");
-                management.getContact().add("John");
-                management.getContact().add("Jack");
-                management.getContact().add(name);
+            public static void writeFile () {
+                management.getContact().add("Jim" + " Morrison");
+                management.getContact().add("Joe" + " Young");
+                management.getContact().add("John" + " Wick");
+                management.getContact().add("Jack" + " Black");
                 for (String fr : management.getContact())
                     System.out.println(fr);
-               try {
+                try {
                     Path info = Paths.get("data", "contact.txt");
-                    Files.write(info, management.getContact());
+                  Files.write(info, management.getContact());
                 } catch (IOException ioe) {
                     ioe.printStackTrace();
                 }
+            }
 
+            public static void writeFile (String firstName, String lastName) {
+                        management.getContact().add(firstName + " " + lastName);
                 try {
                     Path info = Paths.get("data", "contact.txt");
                     Files.write(info, management.getContact());
@@ -58,13 +63,16 @@ public static ContactManager management = new ContactManager("contact", "firstNa
             }
 
 
-            public static String display () {
-                return "--------------------" +
-                        "\n  name:  " + management.getContact() +
-                        "\n  email: " + management.getEmail();
-
+            public static void display () throws FileNotFoundException {
+                FileReader fileOut = new FileReader("contact.txt");
+                System.out.println( "--------------------" +
+                        "\n  name:  " + fileOut);
 
             }
+
+    public static void main(String[] args) throws FileNotFoundException {
+        display();
+    }
 
 }
 

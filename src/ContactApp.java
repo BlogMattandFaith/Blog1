@@ -23,7 +23,6 @@ public class ContactApp {
             System.out.println("3. Search a contact by name.");
             System.out.println("4. Delete an existing contact.");
             System.out.println("5. Exit.");
-
             management.menu();
         } while (!writeOption.equals("5"));
     }

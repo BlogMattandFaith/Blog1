@@ -78,11 +78,9 @@ public class ContactManager {
         String last;
         System.out.println("What is the first name? ");
         first = scanner.next();
-            foundation.writeFile(first);
             System.out.println("what is the last name? ");
-            last = scanner.next();
-            foundation.writeFile(last);
-
+           last = scanner.next();
+            foundation.writeFile(first, last);
 
     }
 
@@ -98,7 +96,7 @@ public class ContactManager {
             scanner.nextLine();
             switch (choice) {
                 case 1:
-                    foundation.display();
+//                    foundation.display();
                     break;
                 case 2:
                     addContact();
